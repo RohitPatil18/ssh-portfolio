@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="section-tittle text-center mb-100">
+            <span>Our Management</span>
+            {% comment %} <h2>Our Specialist</h2> {% endcomment %}
+        </div>
+    </div>
+</div>
+<div class="row">
+    <!-- single Tem -->
+    {% for person in management %}
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
+        <div class="single-team mb-30">
+            <div class="team-img">
+                <img src="{{ person.display_picture.url }}" height= alt="">
+            </div>
+            <div class="team-caption">
+                <h3>{{ person.name }}</h3>
+                <span>{{ person.position }}</span>
+                <!-- Team social -->
+                <div class="team-social">
+                    {% if person.twitter %}
+                        <a href="{{ person.twitter }}"><i class="fab fa-twitter"></i></a>
+                    {% endif %}
+                    {% if person.linkedin %}
+                        <a href="{{ person.linkedin }}"><i class="fab fa-linkedin-in"></i></a>
+                    {% endif %}
+                    {% if person.facebook %}
+                        <a href="{{ person.facebook }}"><i class="fab fa-facebook-f"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
